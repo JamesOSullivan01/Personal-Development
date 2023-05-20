@@ -119,7 +119,31 @@ if (friends.includes("Steven")) {
     console.log("You have a friend called steven");
 }
 
-// Codiing challenge
+// Coding challenge
+
+// let bill = 100;
+// console.log(`your bill was ${bill}, the suggested tip is ${tip} your total is ${bill + tip}`);
+
+function calcTip (input) {
+    let tip = 0;
+    if ( input < 49 && input > 300) {
+        tip = (input * 0.15);
+    } else {
+        tip = (input * 0.20);
+    }
+    let billTotal = input + tip;
+    return billTotal;
+}
+
+// console.log(calcTip(bill));
+let bills = [125, 555, 44];
+for (let i = 0; i < bills.length; i++) {
+    console.log(calcTip(bills[i]));
+}
+
+
+// Objects
+
 
 
 
