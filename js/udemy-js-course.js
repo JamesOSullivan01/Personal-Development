@@ -143,6 +143,144 @@ for (let i = 0; i < bills.length; i++) {
 
 
 // Objects
+//order in which we retrieve objects does not matter
+// let jonasObj = {
+//     firstName: 'Jonas',
+//     lastName: 'Smith',
+//     age: 2037 - 1991,
+//     job: 'Teacher',
+//     friends: ['Micheal', 'Peter', 'Steven']
+// };
+
+// dot vs. bracket notation
+
+// console.log(jonasObj);
+// //dot notation
+// console.log(jonasObj.lastName);
+// // bracket notation...
+// console.log(jonasObj['lastName']);
+//
+// let nameKey = 'Name';
+// console.log(jonasObj['first' + nameKey]);
+// console.log(jonasObj['last' + nameKey]);
+
+// let interestedIn = prompt('What do you want to know about Jonas? Choose between firstname, lastname, age, job, anf friends.')
+// console.log(interestedIn);
+// console.log(jonasObj[interestedIn]);
+
+// if (jonasObj[interestedIn]) {
+//     console.log(jonasObj[interestedIn])
+// } else {
+//     console.log('wrong request!')
+// }
+
+// jonasObj.location = 'Texas';
+// jonasObj['twitter'] = '@something';
+// console.log(jonasObj);
+
+// challenge
+
+// console.log(`${jonasObj.firstName} has ${jonasObj.friends.length} friends, his best friend is called ${jonasObj.friends[0]}`);
+
+// Object methods
+
+// You can add functions to object values
+
+let jonasObj = {
+    firstName: 'Jonas',
+    lastName: 'Smith',
+    birthYear: 1991,
+    job: 'Teacher',
+    friends: ['Micheal', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // calcAge3: function(birthYear) {
+    //     return 2037 - 1991
+    // }
+
+    // calcAge3: function() {
+    //     // console.log(this);
+    //     return 2037 - this.birthYear //'this' is referring to the jonasObj.
+
+
+    calcAge3: function () {
+        this.age = 2037 - this.birthYear
+        return this.age;
+    },
+    getSummary: function() {
+      return `${jonasObj.firstName} ${jonasObj.lastName} is ${this.calcAge3()} years old. He lives in ${jonasObj.location} and was born in ${jonasObj.birthYear}. This guy has ${jonasObj.friends.length} friends and his best friend is ${jonasObj.friends[0]}`
+    }
+};
+
+jonasObj.location = 'Texas';
+console.log(jonasObj);
+console.log(jonasObj.getSummary());
+
+// Any function attached to an object is called a method
+
+console.log(jonasObj.calcAge3());
+
+
+let markObj = {
+    firstName: 'Mark',
+    lastName: 'Smith',
+    weight: 78,
+    height: 1.69,
+
+    calcBmi: function () {
+       this.bmi = this.weight / this.height **2
+        return this.bmi
+    }
+}
+
+// You MUST call the method you created in order for it to be stored in the object like on line 237
+markObj.calcBmi()
+console.log(markObj);
+
+let johnObj = {
+    firstName: 'John',
+    lastName: 'Miller',
+    weight: 92,
+    height: 1.95,
+
+    calcBmi: function () {
+        this.bmi = this.weight / this.height **2
+        return this.bmi
+    }
+}
+
+johnObj.calcBmi();
+console.log(johnObj);
+
+if (markObj.bmi > johnObj.bmi) {
+    console.log(`${markObj.firstName} ${markObj.lastName}'s bmi (${markObj.bmi}) is higher than ${johnObj.firstName} BMI (${johnObj.bmi})`);
+} else {
+    console.log(`${johnObj.firstName} ${johnObj.lastName}'s bmi (${johnObj.bmi}) is higher than ${markObj.firstName} BMI (${markObj.bmi})`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
