@@ -48,23 +48,83 @@
 
 
 
-let calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+// let calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+//
+// let avgDolphin = calcAverage(44, 23, 71);
+// let avgKoala = calcAverage(65, 54, 49);
+//
+//
+// let checkWinner = function(team1, team2) {
+//     if (team1 >= 2 * team2) {
+//         console.log("dolphins win");
+//     } else if (team2 >= 2 * team1) {
+//         console.log("Koalas win");
+//     } else {
+//         console.log("no team wins");
+//     }
+// }
+//
+// checkWinner(avgDolphin, avgKoala);
 
-let avgDolphin = calcAverage(44, 23, 71);
-let avgKoala = calcAverage(65, 54, 49);
+// Array practice
+
+// let friends = ['Micheal', 'Steven', 'Peter'];
+// console.log(friends);
+
+// let years = [1991, 1984, 2008, 2020];
+// console.log(years);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+//
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]); // returns peter
+//
+// friends[2] = "jay";
+// console.log(friends); //replaces peter with Jay
+
+// Exercise
+let calcAge3 = birthyear => 2037 - birthyear;
+
+let years = [1990,1967, 2002, 2010, 2018];
+let age1 = calcAge3(years[0])
+console.log(age1);
+
+let ages = [calcAge3(years[0]), calcAge3(years[1]), calcAge3(years[years.length - 1])];
+console.log(ages);
+
+// Array Methods
+
+let friends = ['Micheal', 'Steven', 'Peter'];
+let newLength = friends.push('jay');
+console.log(friends);
+console.log(newLength);
+friends.unshift("John"); // adds to the beginining returns length
+console.log(friends);
 
 
-let checkWinner = function(team1, team2) {
-    if (team1 >= 2 * team2) {
-        console.log("dolphins win");
-    } else if (team2 >= 2 * team1) {
-        console.log("Koalas win");
-    } else {
-        console.log("no team wins");
-    }
+friends.pop(); // removes last element .pop returns the removed element
+let popped = friends.pop()
+console.log(popped);
+console.log(friends);
+
+friends.shift() // removes first elemetn and returns it
+console.log(friends);
+
+console.log(friends.indexOf('Steven')); // returns index number
+
+console.log(friends.includes("Steven")); // returns a boolean..uses strict equality
+
+if (friends.includes("Steven")) {
+    console.log("You have a friend called steven");
 }
 
-checkWinner(avgDolphin, avgKoala);
+// Codiing challenge
+
+
+
+
+
 
 
 
