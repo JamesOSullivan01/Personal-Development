@@ -86,12 +86,12 @@
 // Exercise
 let calcAge3 = birthyear => 2037 - birthyear;
 
-let years = [1990,1967, 2002, 2010, 2018];
-let age1 = calcAge3(years[0])
-console.log(age1);
+// let years = [1990,1967, 2002, 2010, 2018];
+// let age1 = calcAge3(years[0])
+// console.log(age1);
 
-let ages = [calcAge3(years[0]), calcAge3(years[1]), calcAge3(years[years.length - 1])];
-console.log(ages);
+// let ages = [calcAge3(years[0]), calcAge3(years[1]), calcAge3(years[years.length - 1])];
+// console.log(ages);
 
 // Array Methods
 
@@ -136,10 +136,10 @@ function calcTip (input) {
 }
 
 // console.log(calcTip(bill));
-let bills = [125, 555, 44];
-for (let i = 0; i < bills.length; i++) {
-    console.log(calcTip(bills[i]));
-}
+// let bills = [125, 555, 44];
+// for (let i = 0; i < bills.length; i++) {
+//     console.log(calcTip(bills[i]));
+// }
 
 
 // Objects
@@ -258,71 +258,80 @@ if (markObj.bmi > johnObj.bmi) {
     console.log(`${johnObj.firstName} ${johnObj.lastName}'s bmi (${johnObj.bmi}) is higher than ${markObj.firstName} BMI (${markObj.bmi})`);
 }
 
+// Loops
 
+for(let i = 1; i <= 10; i+=5) {
+    console.log(`ligting weights rep ${i}`);
+}
 
+// looping arrays
 
 
+let jimmyArray = ['Jimmy', 'OSullivan', 2037 - 1986, 'business-owner', ['Ashley', 'Aj', 'Joel'], true];
 
+// console.log(jimmyArray);
+let typesArray = [];
 
+// for (let i = 0; i < jimmyArray.length; i++) {
+//     console.log(jimmyArray[i], typeof jimmyArray[i]);
+//     // typesArray[i] = typeof jimmyArray[i];
+//     typesArray.push(typeof jimmyArray[i]);
+// }
 
+console.log(typesArray);
 
+let years = [1990,1967, 2002, 2010, 2018];
+let ages = [];
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
 
 
+for (let i = 0; i < jimmyArray.length; i++) {
+    if (typeof jimmyArray[i] !== 'string') continue;
+    console.log(jimmyArray[i], typeof jimmyArray[i]);
+};
 
+// loops in loops
 
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`--------- Starting exercise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weight rep ${rep}`);
+    }
+}
 
+// while loop
+let reps = 1
+while (reps <= 10) {
+    console.log(`----${reps}`);
+    reps++;
+}
 
+// no counter while loop
 
+let dice = Math.floor(Math.random() * 6) + 1;
+// console.log(dice);
 
+while (dice !== 5) {
+    console.log(`you rolled a ${dice}`);
+    dice = Math.floor(Math.random() * 6) + 1;
 
+}
 
+let bills = [22, 295, 176,440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totalAmount = [];
 
+function calcTip(input) {
+    for (let i = 0; i < input.length; i++) {
+        let tip = input[i] >= 50 && input[i] <= 300 ? input[i] * 0.15 : input[i] * 0.20;
+        tips.push(tip);
+        totalAmount.push(tip + input[i]);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+calcTip(bills);
+console.log(tips);
+console.log(totalAmount);
